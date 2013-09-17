@@ -3,10 +3,6 @@ KnowlegdeSalon::Application.routes.draw do
   root :to => "static_pages#home"
   get "static_pages/home"
 
-  mount RailsAdmin::Engine => '/admin_user', :as => 'rails_admin'
-
-  devise_for :admin_users
-
   devise_for :users, :controllers => {
      :omniauth_callbacks => "users/omniauth_callbacks"
   }
